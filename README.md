@@ -1,2 +1,3 @@
 # ZDLargeImageDownsizing
-EN: optimization memory when display large image.   CN：优化大图片显示时的内存占用
+
+[Apple Sample Code](https://developer.apple.com/Library/ios/samplecode/LargeImageDownsizing/Introduction/Intro.html#//apple_ref/doc/uid/DTS40011173)
