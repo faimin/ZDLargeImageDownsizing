@@ -256,7 +256,7 @@
         // of the source tile in MB, see how many rows of pixels high it
         // can be given the input image width.
         sourceTile.size.height = (int)( tileTotalPixels / sourceTile.size.width );
-        NSLog(@"source tile size: %f x %f",sourceTile.size.width, sourceTile.size.height);
+        NSLog(@"source tile size: %f x %f", sourceTile.size.width, sourceTile.size.height);
         sourceTile.origin.x = 0.0f;
         // the output tile is the same proportions as the input tile, but
         // scaled to image scale.
@@ -267,7 +267,7 @@
         // the source seem overlap is proportionate to the destination seem overlap.
         // this is the amount of pixels to overlap each tile as we assemble the ouput image.
         sourceSeemOverlap = (int)( ( destSeemOverlap / destResolution.height ) * sourceResolution.height );
-        NSLog(@"dest seem overlap: %f, source seem overlap: %f",destSeemOverlap, sourceSeemOverlap);
+        NSLog(@"dest seem overlap: %f, source seem overlap: %f", destSeemOverlap, sourceSeemOverlap);
         CGImageRef sourceTileImageRef;
         // calculate the number of read/write opertions required to assemble the
         // output image.
@@ -320,6 +320,7 @@
         [self performSelectorOnMainThread:@selector(initializeScrollView:) withObject:nil waitUntilDone:YES];
         // free the context since its job is done. destImageRef retains the pixel data now.
         CGContextRelease( destContext );
+        free(destBitmapData);
     }
 }
 

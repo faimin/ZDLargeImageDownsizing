@@ -82,13 +82,15 @@
 }
 
 - (void)drawRect:(CGRect)rect {
-    CGContextRef context = UIGraphicsGetCurrentContext();    
-	CGContextSaveGState(context);
-	// Scale the context so that the image is rendered 
-	// at the correct size for the zoom level.
-	CGContextScaleCTM(context, self.imageScale, self.imageScale);
-	CGContextDrawImage(context, self.imageRect, self.image.CGImage);
-	CGContextRestoreGState(context);	
+    @autoreleasepool {
+        CGContextRef context = UIGraphicsGetCurrentContext();
+        CGContextSaveGState(context);
+        // Scale the context so that the image is rendered
+        // at the correct size for the zoom level.
+        CGContextScaleCTM(context, self.imageScale, self.imageScale);
+        CGContextDrawImage(context, self.imageRect, self.image.CGImage);
+        CGContextRestoreGState(context);
+    }
 }
 
 @end
